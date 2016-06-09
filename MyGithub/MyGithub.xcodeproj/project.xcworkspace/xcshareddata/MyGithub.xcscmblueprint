@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C8656FF03C7AC8CAFC26BF67A6EEC6143DC10810",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C8656FF03C7AC8CAFC26BF67A6EEC6143DC10810" : 0,
+    "81CF173C40A35A51BD6CF3F4580804424013B012" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C213EDD8-BF4D-4FF0-9200-5EB8275F6218",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C8656FF03C7AC8CAFC26BF67A6EEC6143DC10810" : "MyGithub\/",
+    "81CF173C40A35A51BD6CF3F4580804424013B012" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MyGithub",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MyGithub\/MyGithub.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dnadri\/Swift-Projects.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "81CF173C40A35A51BD6CF3F4580804424013B012"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:dnadri\/MyGithub.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C8656FF03C7AC8CAFC26BF67A6EEC6143DC10810"
+    }
+  ]
+}
