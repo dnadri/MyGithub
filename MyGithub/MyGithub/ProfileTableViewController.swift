@@ -12,6 +12,7 @@ class ProfileTableViewController: UITableViewController {
     
     @IBOutlet weak var backgroundImageView: UIImageView!
     
+    @IBOutlet weak var menuBarButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,12 @@ class ProfileTableViewController: UITableViewController {
         backgroundImageView.addSubview(blurEffectView)
         
 //        tableView.tableFooterView = UIView(frame: CGRectZero)
+        
+        if self.revealViewController() != nil {
+            menuBarButton.target = self.revealViewController()
+            menuBarButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
         
     }
 
