@@ -1,0 +1,10 @@
+PODS:
+  - NBNRequestKit (1.0.0)
+
+DEPENDENCIES:
+  - NBNRequestKit
+
+SPEC CHECKSUMS:
+  NBNRequestKit: 408e8707047a6c587fee110f9b5aa7677c69ba4c
+
+COCOAPODS: 0.39.0
