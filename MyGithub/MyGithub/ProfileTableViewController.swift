@@ -30,6 +30,9 @@ class ProfileTableViewController: UITableViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
+        // Uncomment to change the width of the side menu
+        //self.revealViewController().rearViewRevealWidth = 62
+        
     }
 
     override func didReceiveMemoryWarning() {
