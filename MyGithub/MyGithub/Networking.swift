@@ -65,13 +65,11 @@ class Networking {
                 print("json: \(json)")
                 
                 if let name = json["name"].string {
-                    
                     print("name: \(name)")
-                    
-                } else {
-                    print("error parsing...")
                 }
+                
             }
+
         }
         
     }

@@ -14,4 +14,11 @@ class RepositoryTableViewCell: UITableViewCell {
     
     @IBOutlet weak var repositoryDescriptionLabel: UILabel!
     
+    @IBOutlet weak var stargazersCountLabel: UILabel!
+    
+    @IBOutlet weak var forksCountLabel: UILabel!
+    
+    @IBOutlet weak var issuesCountLabel: UILabel!
+    
+    @IBOutlet weak var timestampLabel: UILabel!
 }

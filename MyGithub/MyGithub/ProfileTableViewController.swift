@@ -74,7 +74,6 @@ class ProfileTableViewController: UITableViewController {
                 
                 let avatarURL = json["avatar_url"].URL
                 print("avatar_url: \(avatarURL)")
-            
                 
                 let name = json["name"].string
                 print("name: \(name)")
