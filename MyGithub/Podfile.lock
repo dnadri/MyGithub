@@ -1,10 +1,13 @@
 PODS:
-  - NBNRequestKit (1.0.0)
+  - Alamofire (3.4.0)
+  - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
-  - NBNRequestKit
+  - Alamofire
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
-  NBNRequestKit: 408e8707047a6c587fee110f9b5aa7677c69ba4c
+  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
 COCOAPODS: 0.39.0

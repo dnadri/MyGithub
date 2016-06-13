@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ProfileTableViewController: UITableViewController {
     
@@ -14,15 +16,22 @@ class ProfileTableViewController: UITableViewController {
     
     @IBOutlet weak var menuBarButton: UIBarButtonItem!
 
+    @IBOutlet weak var userLabel: UILabel!
+    
+    @IBOutlet weak var usernameLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Networking.getProfileInfo(<#T##avatarURL: NSURL##NSURL#>, name: <#T##String#>, username: <#T##String#>, followers: <#T##Int#>, starred: <#T##Int#>, following: <#T##Int#>, bio: <#T##String#>)
         
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         backgroundImageView.addSubview(blurEffectView)
         
-//        tableView.tableFooterView = UIView(frame: CGRectZero)
+        //tableView.tableFooterView = UIView(frame: CGRectZero)
         
         if self.revealViewController() != nil {
             menuBarButton.target = self.revealViewController()
@@ -31,7 +40,7 @@ class ProfileTableViewController: UITableViewController {
         }
         
         // Uncomment to change the width of the side menu
-        //self.revealViewController().rearViewRevealWidth = 62
+        //self.revealViewController().rearViewRevealWidth = 100
         
     }
 

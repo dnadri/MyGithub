@@ -2,8 +2,8 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'MyGithub' do
-pod "NBNRequestKit"
-
+    pod 'Alamofire'
+    pod 'SwiftyJSON'
 end
 
 target 'MyGithubTests' do

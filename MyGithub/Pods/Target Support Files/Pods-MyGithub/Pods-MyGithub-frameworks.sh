@@ -84,8 +84,10 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-MyGithub/RequestKit.framework"
+  install_framework "Pods-MyGithub/Alamofire.framework"
+  install_framework "Pods-MyGithub/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-MyGithub/RequestKit.framework"
+  install_framework "Pods-MyGithub/Alamofire.framework"
+  install_framework "Pods-MyGithub/SwiftyJSON.framework"
 fi
