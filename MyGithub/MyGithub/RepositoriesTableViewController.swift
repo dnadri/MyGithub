@@ -110,11 +110,25 @@ class RepositoriesTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("RepositoryCell", forIndexPath: indexPath) as! RepositoryTableViewCell
         
-//        cell.repositoryNameLabel.text = self.repositories[indexPath.row]?.name
-//        cell.repositoryDescriptionLabel.text = self.repositories[indexPath.row]?.description
-//        cell.stargazersCountLabel.text = self.repositories[indexPath.row]?.stargazersCount
-//        cell.forksCountLabel.text = self.repositories[indexPath.row]?.forksCount
-//        cell.issuesCountLabel.text = self.repositories[indexPath.row]?.issuesCount
+        if let name = self.repositories[indexPath.row]?.name {
+            cell.repositoryNameLabel.text = name
+        }
+        
+        if let description = self.repositories[indexPath.row]?.description {
+            cell.repositoryDescriptionLabel.text = description
+        }
+        
+        if let stars = self.repositories[indexPath.row]?.stargazersCount {
+            cell.stargazersCountLabel.text = String(stars)
+        }
+        
+        if let forks = self.repositories[indexPath.row]?.forksCount {
+            cell.forksCountLabel.text = String(forks)
+        }
+
+        if let issues = self.repositories[indexPath.row]?.issuesCount {
+            cell.issuesCountLabel.text = String(issues)
+        }
         
 //        let dateUpdated = self.repositories[indexPath.row]?.timestamp as NSDate
 //        let dateFormat = NSDateFormatter()
