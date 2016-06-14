@@ -48,37 +48,39 @@ class RepositoriesTableViewController: UITableViewController {
             print(response.data)     // server data
             print(response.result)   // result of response serialization
             
-            if let JSON = response.result.value {
-                print("***json: \(JSON)")
-                print("***json.count: \(JSON.count)")
+            if let json = response.result.value {
+                print("***json: \(json)")
+                print("***json.count: \(json.count)")
 
                 //self.repositories = JSON as! [Repository]
-                for item in JSON as! NSMutableArray {
+                for item in json as! NSMutableArray {
                     print("item in JSON: \(item)")
                     
-                    let name = item["name"] as! String
-                    print("name: \(name)")
+//                    let name = item["name"] as! String
+//                    print("name: \(name)")
+//                    
+//                    let description = item["description"] as! String
+//                    print("description: \(description)")
+//                    
+//                    let stargazersCount = item["stargazers_count"] as! Int
+//                    print("stargazersCount: \(stargazersCount)")
+//                    
+//                    let forksCount = item["forks_count"] as! Int
+//                    print("forksCount: \(forksCount)")
+//                    
+//                    let issuesCount = item["open_issues_count"] as! Int
+//                    print("issuesCount: \(issuesCount)")
+//                    
+//                    let timestamp = item["updated_at"] as! String
+//                    print("timestamp: \(timestamp)")
                     
-                    let description = item["description"] as! String
-                    print("description: \(description)")
-                    
-                    let stargazersCount = item["stargazers_count"] as! Int
-                    print("stargazersCount: \(stargazersCount)")
-                    
-                    let forksCount = item["forks_count"] as! Int
-                    print("forksCount: \(forksCount)")
-                    
-                    let issuesCount = item["open_issues_count"] as! Int
-                    print("issuesCount: \(issuesCount)")
-                    
-                    let timestamp = item["updated_at"] as! String
-                    print("timestamp: \(timestamp)")
-                    
-                    let repository = Repository(name: name, description: description, stargazersCount: stargazersCount, forksCount: forksCount, issuesCount: issuesCount, timestamp: timestamp)
+                    let repository = Repository(name: item["name"] as? String, description: item["description"] as? String, stargazersCount: item["stargazers_count"] as? Int, forksCount: item["forks_count"] as? Int, issuesCount: item["open_issues_count"] as? Int, timestamp: item["updated_at"] as? String)
                     
                     self.repositories.append(repository)
                     
                 }
+                
+                self.tableView.reloadData()
                 
             } else {
                 
@@ -86,7 +88,6 @@ class RepositoriesTableViewController: UITableViewController {
                 
             }
             
-            self.tableView.reloadData()
             
         }
         
@@ -105,6 +106,12 @@ class RepositoriesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("RepositoryCell", forIndexPath: indexPath) as! RepositoryTableViewCell
+        
+        cell.repositoryNameLabel.text = self.repositories[indexPath.row]?.name
+        cell.repositoryDescriptionLabel.text = self.repositories[indexPath.row]?.description
+        cell.stargazersCountLabel.text = self.repositories[indexPath.row]?.stargazersCount
+        cell.forksCountLabel.text = self.repositories[indexPath.row]?.forksCount
+        cell.issuesCountLabel.text = self.repositories[indexPath.row]?.issuesCount
         
 //        if let name = self.repositories. {
 //            cell.repositoryNameLabel.text = name
