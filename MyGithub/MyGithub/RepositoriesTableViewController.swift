@@ -26,6 +26,8 @@ class RepositoriesTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        
         // Removes extra cell separators below tableview (of empty/unused cells)
         tableView.tableFooterView = UIView(frame: CGRectZero)
         
@@ -141,6 +143,12 @@ class RepositoriesTableViewController: UITableViewController {
         }
         
         return cell
+        
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        
         
     }
     

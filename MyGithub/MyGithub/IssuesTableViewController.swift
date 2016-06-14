@@ -16,9 +16,15 @@ class IssuesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("IssuesTableViewController: viewDidLoad() called.")
+        
+        getIssues()
+        
         // Self-sizing cells (auto-layout constraints must be set for cell)
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
         
         // Removes extra cell separators below tableview (of empty/unused cells)
         tableView.tableFooterView = UIView(frame: CGRectZero)
@@ -74,20 +80,27 @@ class IssuesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("IssueCell") as! IssuesTableViewCell
+
+        if let number = self.issues[indexPath.row]?.number {
+            cell.numberLabel.text = "#\(number)"
+        }
         
-        cell.numberLabel.text = String(self.issues[indexPath.row]?.number)
-        cell.numberLabel.text = String(self.issues[indexPath.row]?.number)
-        cell.titleLabel.text = String(self.issues[indexPath.row]?.title)
-        cell.timestampLabel.text = String(self.issues[indexPath.row]?.timestamp)
+        if let title = self.issues[indexPath.row]?.title {
+            cell.titleLabel.text = title
+        }
+        
+        // "Updated Jun 13, 2016, 6:26PM EDT"
+        // i.e.: "Updated 4 days ago"
+        if let dateUpdated = self.issues[indexPath.row]?.timestamp {
+            let dateFormatter = NSDateFormatter()
+            // The format must match the timestamp string otherwise it will return nil
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:sszzz"
+            let date = dateFormatter.dateFromString(dateUpdated)
+            cell.timestampLabel.text = NSDate().offsetFrom(date!)
+        }
         
         //if state == open
             //cell.stateImageView.image = UIImage(named: "open")
-        
-        
-//        let dateUpdated = self.issues[indexPath.row]?.timestamp as NSDate
-//        let dateFormat = NSDateFormatter()
-//        dateFormat.dateFormat = "h:mm a"
-//        cell.timestampLabel.text = NSString(format: "%@", dateFormat.stringFromDate(dateUpdated)) as String
         
         
         return cell
