@@ -12,9 +12,7 @@ import SwiftyJSON
 
 class RepositoriesTableViewController: UITableViewController {
     
-    var repository = [Repository?()]
-    
-    var repositoryCount: Int?
+    var repositories = [Repository?]()
     
     @IBOutlet weak var menuBarButton: UIBarButtonItem!
     
@@ -50,35 +48,35 @@ class RepositoriesTableViewController: UITableViewController {
             print(response.data)     // server data
             print(response.result)   // result of response serialization
             
-            if response.result.value != nil {
-                
-                let json = JSON(response.result.value!)
-                print("***json: \(json)")
-                print("json.count: \(json.count)")
-                
-                self.repositoryCount = json.count
-                
-                for item in json {
+            if let JSON = response.result.value {
+                print("***json: \(JSON)")
+                print("***json.count: \(JSON.count)")
+
+                //self.repositories = JSON as! [Repository]
+                for item in JSON as! NSMutableArray {
+                    print("item in JSON: \(item)")
                     
-                    let name = json[0]["name"].string
+                    let name = item["name"] as! String
                     print("name: \(name)")
                     
-                    let description = json[0]["description"].string
+                    let description = item["description"] as! String
                     print("description: \(description)")
                     
-                    let stargazersCount = json[0]["stargazers_count"].int
+                    let stargazersCount = item["stargazers_count"] as! Int
                     print("stargazersCount: \(stargazersCount)")
                     
-                    let forksCount = json[0]["forks_count"].int
+                    let forksCount = item["forks_count"] as! Int
                     print("forksCount: \(forksCount)")
                     
-                    let issuesCount = json[0]["open_issues_count"].int
+                    let issuesCount = item["open_issues_count"] as! Int
                     print("issuesCount: \(issuesCount)")
                     
-                    let timestamp = json[0]["updated_at"].string
+                    let timestamp = item["updated_at"] as! String
                     print("timestamp: \(timestamp)")
                     
-                    self.repository = Repository(name: name!, description: description!, stargazersCount: stargazersCount!, forksCount: forksCount!, issuesCount: issuesCount!, timestamp: timestamp!)
+                    let repository = Repository(name: name, description: description, stargazersCount: stargazersCount, forksCount: forksCount, issuesCount: issuesCount, timestamp: timestamp)
+                    
+                    self.repositories.append(repository)
                     
                 }
                 
@@ -87,6 +85,8 @@ class RepositoriesTableViewController: UITableViewController {
                 print("ERROR: \(response.result.error)")
                 
             }
+            
+            self.tableView.reloadData()
             
         }
         
@@ -99,36 +99,36 @@ class RepositoriesTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.repositoryCount!
+        return self.repositories.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("RepositoryCell") as! RepositoryTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("RepositoryCell", forIndexPath: indexPath) as! RepositoryTableViewCell
         
-        if let name = self.repository?.name {
-            cell.repositoryNameLabel.text = name
-        }
-        
-        if let description = self.repository?.description {
-            cell.repositoryDescriptionLabel.text = description
-        }
-        
-        if let stargazersCount = self.repository?.stargazersCount {
-            cell.stargazersCountLabel.text = String(stargazersCount)
-        }
-        
-        if let forksCount = self.repository?.forksCount {
-            cell.forksCountLabel.text = String(forksCount)
-        }
-        
-        if let issuesCount = self.repository?.issuesCount {
-            cell.issuesCountLabel.text = String(issuesCount)
-        }
-        
-        if let timestamp = self.repository?.timestamp {
-            cell.timestampLabel.text = timestamp
-        }
+//        if let name = self.repositories. {
+//            cell.repositoryNameLabel.text = name
+//        }
+//        
+//        if let description = self.repository?.description {
+//            cell.repositoryDescriptionLabel.text = description
+//        }
+//        
+//        if let stargazersCount = self.repository?.stargazersCount {
+//            cell.stargazersCountLabel.text = String(stargazersCount)
+//        }
+//        
+//        if let forksCount = self.repository?.forksCount {
+//            cell.forksCountLabel.text = String(forksCount)
+//        }
+//        
+//        if let issuesCount = self.repository?.issuesCount {
+//            cell.issuesCountLabel.text = String(issuesCount)
+//        }
+//        
+//        if let timestamp = self.repository?.timestamp {
+//            cell.timestampLabel.text = timestamp
+//        }
         
         return cell
         
