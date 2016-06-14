@@ -63,7 +63,6 @@
 		713DF8611D0B4050005262CE /* IssuesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesTableViewController.swift; sourceTree = "<group>"; };
 		713DF8681D0B414D005262CE /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		713DF86A1D0B4162005262CE /* IssuesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesTableViewCell.swift; sourceTree = "<group>"; };
-		713DF8861D0B50A2005262CE /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile; path = "../../../../Desktop/octokit.swift-master/Cartfile"; sourceTree = "<group>"; };
 		713DF88A1D0B553B005262CE /* RequestKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RequestKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/MyGithub-avqjnspkubijgldaroigyscekwzo/Build/Products/Debug-iphonesimulator/RequestKit.framework"; sourceTree = "<group>"; };
 		71F77ADB1D0A00FB0076472F /* MyGithub-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyGithub-Bridging-Header.h"; sourceTree = "<group>"; };
 		71F77ADC1D0A00FC0076472F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -120,7 +119,6 @@
 		7107A85A1D09D8A200DD3690 = {
 			isa = PBXGroup;
 			children = (
-				713DF8861D0B50A2005262CE /* Cartfile */,
 				7107A8651D09D8A200DD3690 /* MyGithub */,
 				7107A87A1D09D8A300DD3690 /* MyGithubTests */,
 				7107A8851D09D8A300DD3690 /* MyGithubUITests */,

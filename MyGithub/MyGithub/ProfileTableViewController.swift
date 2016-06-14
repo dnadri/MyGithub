@@ -100,6 +100,9 @@ class ProfileTableViewController: UITableViewController {
             } else {
                 
                 print("ERROR: \(response.result.error)")
+                let alert = UIAlertController(title: "Error", message: "\(response.result.error)", preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                alert.presentViewController(alert, animated: true, completion: nil)
                 
             }
         }

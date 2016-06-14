@@ -85,6 +85,9 @@ class RepositoriesTableViewController: UITableViewController {
             } else {
                 
                 print("ERROR: \(response.result.error)")
+                let alert = UIAlertController(title: "Error", message: "\(response.result.error)", preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                alert.presentViewController(alert, animated: true, completion: nil)
                 
             }
             
@@ -107,35 +110,11 @@ class RepositoriesTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("RepositoryCell", forIndexPath: indexPath) as! RepositoryTableViewCell
         
-        cell.repositoryNameLabel.text = self.repositories[indexPath.row]?.name
-        cell.repositoryDescriptionLabel.text = self.repositories[indexPath.row]?.description
-        cell.stargazersCountLabel.text = self.repositories[indexPath.row]?.stargazersCount
-        cell.forksCountLabel.text = self.repositories[indexPath.row]?.forksCount
-        cell.issuesCountLabel.text = self.repositories[indexPath.row]?.issuesCount
-        
-//        if let name = self.repositories. {
-//            cell.repositoryNameLabel.text = name
-//        }
-//        
-//        if let description = self.repository?.description {
-//            cell.repositoryDescriptionLabel.text = description
-//        }
-//        
-//        if let stargazersCount = self.repository?.stargazersCount {
-//            cell.stargazersCountLabel.text = String(stargazersCount)
-//        }
-//        
-//        if let forksCount = self.repository?.forksCount {
-//            cell.forksCountLabel.text = String(forksCount)
-//        }
-//        
-//        if let issuesCount = self.repository?.issuesCount {
-//            cell.issuesCountLabel.text = String(issuesCount)
-//        }
-//        
-//        if let timestamp = self.repository?.timestamp {
-//            cell.timestampLabel.text = timestamp
-//        }
+//        cell.repositoryNameLabel.text = self.repositories[indexPath.row]?.name
+//        cell.repositoryDescriptionLabel.text = self.repositories[indexPath.row]?.description
+//        cell.stargazersCountLabel.text = self.repositories[indexPath.row]?.stargazersCount
+//        cell.forksCountLabel.text = self.repositories[indexPath.row]?.forksCount
+//        cell.issuesCountLabel.text = self.repositories[indexPath.row]?.issuesCount
         
         return cell
         
