@@ -36,6 +36,8 @@ class ProfileTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("ProfileTableViewController: viewDidLoad() called.")
+        
         getProfileInfo()
         
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
@@ -114,7 +116,7 @@ class ProfileTableViewController: UITableViewController {
         if let avatar = self.profile?.avatarURL {
             
             // Asynchronously load the user's avatar from the url retrieved from the API call
-            dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            dispatch_async(dispatch_get_main_queue(), {
                 
                 self.profileImageView.image =  UIImage(data: NSData(contentsOfURL: avatar)!)
                 self.backgroundImageView.image = self.profileImageView.image

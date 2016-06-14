@@ -116,10 +116,10 @@ class RepositoriesTableViewController: UITableViewController {
 //        cell.forksCountLabel.text = self.repositories[indexPath.row]?.forksCount
 //        cell.issuesCountLabel.text = self.repositories[indexPath.row]?.issuesCount
         
-        let dateUpdated = self.repositories[indexPath.row]?.timestamp as NSDate
-        let dateFormat = NSDateFormatter()
-        dateFormat.dateFormat = "h:mm a"
-        cell.timestampLabel.text = NSString(format: "%@", dateFormat.stringFromDate(dateUpdated)) as String
+//        let dateUpdated = self.repositories[indexPath.row]?.timestamp as NSDate
+//        let dateFormat = NSDateFormatter()
+//        dateFormat.dateFormat = "h:mm a"
+//        cell.timestampLabel.text = NSString(format: "%@", dateFormat.stringFromDate(dateUpdated)) as String
 
 /*
     var str = "2013-07-21T19:32:00Z"

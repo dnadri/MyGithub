@@ -75,9 +75,9 @@ class IssuesTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("IssueCell") as! IssuesTableViewCell
         
-        cell.numberLabel.text = self.issues[indexPath.row]?.number
-        cell.titleLabel.text = self.issues[indexPath.row]?.title
-        cell.timestampLabel.text = self.issues[indexPath.row]?.timestamp
+//        cell.numberLabel.text = self.issues[indexPath.row]?.number
+//        cell.titleLabel.text = self.issues[indexPath.row]?.title
+//        cell.timestampLabel.text = self.issues[indexPath.row]?.timestamp
         
         //if state == open
             //cell.stateImageView.image = UIImage(named: "open")
