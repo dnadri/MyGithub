@@ -119,32 +119,26 @@ class RepositoriesTableViewController: UITableViewController {
         }
         
         if let stars = self.repositories[indexPath.row]?.stargazersCount {
-            cell.stargazersCountLabel.text = String(stars)
+            cell.stargazersCountLabel.text = "\(stars) Stars"
         }
         
         if let forks = self.repositories[indexPath.row]?.forksCount {
-            cell.forksCountLabel.text = String(forks)
+            cell.forksCountLabel.text = "\(forks) Forks"
         }
 
         if let issues = self.repositories[indexPath.row]?.issuesCount {
-            cell.issuesCountLabel.text = String(issues)
+            cell.issuesCountLabel.text = "\(issues) Issues"
         }
         
-//        let dateUpdated = self.repositories[indexPath.row]?.timestamp as NSDate
-//        let dateFormat = NSDateFormatter()
-//        dateFormat.dateFormat = "h:mm a"
-//        cell.timestampLabel.text = NSString(format: "%@", dateFormat.stringFromDate(dateUpdated)) as String
-
-/*
-    var str = "2013-07-21T19:32:00Z"
-
-    var dateFor: NSDateFormatter = NSDateFormatter()
-    dateFor.dateFormat = "yyyy-MM-dd'T'HH:mm:ss:SSS"
-
-    var yourDate: NSDate? = dateFor.dateFromString(str)
-
-    println(yourDate)
-*/
+        // "Updated Jun 13, 2016, 6:26PM EDT"
+        // i.e.: "Updated 4 days ago"
+        if let dateUpdated = self.repositories[indexPath.row]?.timestamp {
+            let dateFormatter = NSDateFormatter()
+            // The format must match the timestamp string otherwise it will return nil
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:sszzz"
+            let date = dateFormatter.dateFromString(dateUpdated)
+            cell.timestampLabel.text = NSDate().offsetFrom(date!)
+        }
         
         return cell
         
