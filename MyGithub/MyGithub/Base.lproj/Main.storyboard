@@ -868,10 +868,7 @@
                                             <rect key="frame" x="21" y="87" width="60" height="25"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Updated" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJY-lh-mB7">
-                                            <rect key="frame" x="655" y="16" width="92" height="25"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="92" id="VNW-a6-cBG"/>
-                                            </constraints>
+                                            <rect key="frame" x="686" y="18" width="61" height="21"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -882,15 +879,14 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="eot-ly-ziM" secondAttribute="bottom" constant="42" id="10w-J7-kJS"/>
                                         <constraint firstItem="87b-dX-bIT" firstAttribute="top" secondItem="eot-ly-ziM" secondAttribute="bottom" constant="8" symbolic="YES" id="7V5-Js-KcL"/>
                                         <constraint firstItem="QIp-UC-j19" firstAttribute="leading" secondItem="kC7-FN-SE8" secondAttribute="leadingMargin" constant="13" id="Cwz-HA-Hb8"/>
-                                        <constraint firstItem="64I-CQ-qlj" firstAttribute="centerY" secondItem="yJY-lh-mB7" secondAttribute="centerY" id="D1c-kl-K2l"/>
+                                        <constraint firstItem="yJY-lh-mB7" firstAttribute="trailing" secondItem="eot-ly-ziM" secondAttribute="trailing" id="DXa-3z-7Fg"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="eot-ly-ziM" secondAttribute="trailing" constant="13" id="EMq-XB-joV"/>
                                         <constraint firstItem="64I-CQ-qlj" firstAttribute="leading" secondItem="QIp-UC-j19" secondAttribute="trailing" constant="22" id="PA4-vD-HSa"/>
                                         <constraint firstItem="eot-ly-ziM" firstAttribute="top" secondItem="64I-CQ-qlj" secondAttribute="bottom" constant="9" id="S1J-vO-6Ox"/>
                                         <constraint firstItem="eot-ly-ziM" firstAttribute="leading" secondItem="87b-dX-bIT" secondAttribute="trailing" constant="-60" id="Tql-ew-w8O"/>
                                         <constraint firstItem="64I-CQ-qlj" firstAttribute="top" secondItem="kC7-FN-SE8" secondAttribute="topMargin" constant="6" id="V0l-17-60n"/>
+                                        <constraint firstItem="yJY-lh-mB7" firstAttribute="centerY" secondItem="64I-CQ-qlj" secondAttribute="centerY" id="VgP-b8-FTs"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="87b-dX-bIT" secondAttribute="bottom" constant="9" id="Yiz-qt-EaN"/>
-                                        <constraint firstItem="64I-CQ-qlj" firstAttribute="baseline" secondItem="yJY-lh-mB7" secondAttribute="firstBaseline" id="j5c-zu-Cta"/>
-                                        <constraint firstItem="yJY-lh-mB7" firstAttribute="leading" secondItem="64I-CQ-qlj" secondAttribute="trailing" constant="24" id="koK-oh-zZH"/>
                                         <constraint firstItem="eot-ly-ziM" firstAttribute="leading" secondItem="87b-dX-bIT" secondAttribute="leading" id="pPL-uk-yHB"/>
                                         <constraint firstAttribute="topMargin" secondItem="QIp-UC-j19" secondAttribute="top" id="ypL-S1-Us0"/>
                                         <constraint firstItem="eot-ly-ziM" firstAttribute="centerY" secondItem="kC7-FN-SE8" secondAttribute="centerY" id="zG2-B7-znQ"/>
@@ -906,7 +902,7 @@
                     <navigationItem key="navigationItem" id="knf-4Z-OLM">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="Bhf-gg-M5x">
                             <connections>
-                                <segue destination="VtU-oN-3he" kind="modal" id="bh9-M4-94k"/>
+                                <segue destination="VtU-oN-3he" kind="modal" identifier="showEditIssueTableViewController" id="hFY-xq-bAp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

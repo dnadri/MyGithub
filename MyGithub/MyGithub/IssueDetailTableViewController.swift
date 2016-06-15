@@ -73,6 +73,24 @@ class IssueDetailTableViewController: UITableViewController {
         
         
         return cell
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "showEditIssueTableViewController" {
+            
+            print("prepareForSegue: showEditIssueTableViewController.")
+            
+            let nav = segue.destinationViewController as! UINavigationController
+            
+            let destinationVC = nav.topViewController as! EditIssueTableViewController
+            
+            // Pass the issue to the EditIssueTableViewController to edit the correct issue
+            destinationVC.issue = issue
+            
+        }
+        
     }
     
     

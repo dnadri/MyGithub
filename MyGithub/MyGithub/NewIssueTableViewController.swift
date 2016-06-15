@@ -14,6 +14,8 @@ class NewIssueTableViewController: UITableViewController, UITextViewDelegate {
     
     var currentRepoName: String?
     
+    var issue: Issue?
+    
     @IBOutlet weak var submitBarButton: UIBarButtonItem!
     
     @IBOutlet weak var titleTextView: UITextView!

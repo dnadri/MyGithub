@@ -51,7 +51,7 @@ class IssuesTableViewController: UITableViewController {
                 for item in json as! [AnyObject] {
                     print("item in JSON: \(item)")
                     
-                    let issue = Issue(number: item["number"] as? Int, title: item["title"] as? String, body: item["body"] as? String, comments: item["comments"] as? Int, commentsURL: nil, timestamp: item["updated_at"] as? String, state: item["state"] as? String)
+                    let issue = Issue(number: item["number"] as? Int, title: item["title"] as? String, body: item["body"] as? String, comments: item["comments"] as? Int, commentsURL: item["comments_url"] as? String, timestamp: item["updated_at"] as? String, state: item["state"] as? String)
                     
                     self.issues.append(issue)
                     

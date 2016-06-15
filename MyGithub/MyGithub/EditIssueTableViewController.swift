@@ -11,6 +11,8 @@ import Alamofire
 
 class EditIssueTableViewController: UITableViewController, UITextViewDelegate {
     
+    var issue: Issue?
+    
     var openIssueCell: UITableViewCell = UITableViewCell()
     
     var closeIssueCell: UITableViewCell = UITableViewCell()
@@ -46,22 +48,22 @@ class EditIssueTableViewController: UITableViewController, UITextViewDelegate {
         
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        if indexPath.section == 2 {
-            
-            print("Open/Close Issue cell")
-            
-            // if issue is open, create and return Close Issue cell (Red RGB: 255, 42, 52)
-            // return self.closeIssueCell
-            
-            // else, create and return Open Issue cell (Green RGB: 0, 255, 0)
-            // return self.openIssueCell
-            
-        }
-
-        
-    }
+//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        
+//        if indexPath.section == 2 {
+//            
+//            print("Open/Close Issue cell")
+//            
+//            // if issue is open, create and return Close Issue cell (Red RGB: 255, 42, 52)
+//            // return self.closeIssueCell
+//            
+//            // else, create and return Open Issue cell (Green RGB: 0, 255, 0)
+//            // return self.openIssueCell
+//            
+//        }
+//
+//        
+//    }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
@@ -87,54 +89,52 @@ class EditIssueTableViewController: UITableViewController, UITextViewDelegate {
         
     }
     
-    func closeIssue() {
-        print("closeIssue()")
-        
-        let params = ["state": "closed"]
-        
-        Alamofire.request(.POST, "https://api.github.com/repos/wework-test/\(currentRepoName!)/issues/\(issueNumber)", parameters: params, encoding: .JSON)
-            .validate(statusCode: 200..<300).responseJSON { response in
-                
-                guard response.result.error ==  nil else {
-                    // ERROR
-                    print("ERROR: \(response.result.error!)")
-                    return
-                }
-                
-                if let value = response.result.value {
-                    // SUCCESS
-                    let issue = JSON(value)
-                    print("Closed Issue: \(issue.description)")
-                }
-                
-        }
-        
-    }
-    
-    func openIssue() {
-        print("openIssue()")
-        
-        let params = ["state": "open"]
-        
-        Alamofire.request(.POST, "https://api.github.com/repos/wework-test/\(currentRepoName!)/issues/\(issueNumber)", parameters: params, encoding: .JSON)
-            .validate(statusCode: 200..<300).responseJSON { response in
-                
-                guard response.result.error ==  nil else {
-                    // ERROR
-                    print("ERROR: \(response.result.error!)")
-                    return
-                }
-                
-                if let value = response.result.value {
-                    // SUCCESS
-                    let issue = JSON(value)
-                    print("Closed Issue: \(issue.description)")
-                }
-                
-        }
-        
-    }
-    
-    }
+//    func closeIssue() {
+//        print("closeIssue()")
+//        
+//        let params = ["state": "closed"]
+//        
+//        Alamofire.request(.POST, "https://api.github.com/repos/wework-test/\(currentRepoName!)/issues/\(issueNumber)", parameters: params, encoding: .JSON)
+//            .validate(statusCode: 200..<300).responseJSON { response in
+//                
+//                guard response.result.error ==  nil else {
+//                    // ERROR
+//                    print("ERROR: \(response.result.error!)")
+//                    return
+//                }
+//                
+//                if let value = response.result.value {
+//                    // SUCCESS
+//                    let issue = JSON(value)
+//                    print("Closed Issue: \(issue.description)")
+//                }
+//                
+//        }
+//        
+//    }
+//    
+//    func openIssue() {
+//        print("openIssue()")
+//        
+//        let params = ["state": "open"]
+//        
+//        Alamofire.request(.POST, "https://api.github.com/repos/wework-test/\(currentRepoName!)/issues/\(issueNumber)", parameters: params, encoding: .JSON)
+//            .validate(statusCode: 200..<300).responseJSON { response in
+//                
+//                guard response.result.error ==  nil else {
+//                    // ERROR
+//                    print("ERROR: \(response.result.error!)")
+//                    return
+//                }
+//                
+//                if let value = response.result.value {
+//                    // SUCCESS
+//                    let issue = JSON(value)
+//                    print("Closed Issue: \(issue.description)")
+//                }
+//                
+//        }
+//    
+//    }
     
 }

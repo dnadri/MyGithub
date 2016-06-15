@@ -14,11 +14,11 @@ class Issue {
     var title: String?
     var body: String?
     var comments: Int?
-    var commentsURL: NSURL?
+    var commentsURL: String?
     var timestamp: String?
     var state: String?
     
-    init(number: Int?, title: String?, body: String?, comments: Int?, commentsURL: NSURL?, timestamp: String?, state: String?) {
+    init(number: Int?, title: String?, body: String?, comments: Int?, commentsURL: String?, timestamp: String?, state: String?) {
         
         self.number = number
         self.title = title
