@@ -51,7 +51,7 @@ class IssuesTableViewController: UITableViewController {
                 for item in json as! [AnyObject] {
                     print("item in JSON: \(item)")
                     
-                    let issue = Issue(number: item["number"] as? Int, title: item["title"] as? String, body: item["body"] as? String, comments: item["comments"] as? Int, timestamp: item["updated_at"] as? String, state: item["state"] as? String)
+                    let issue = Issue(number: item["number"] as? Int, title: item["title"] as? String, body: item["body"] as? String, comments: item["comments"] as? Int, commentsURL: nil, timestamp: item["updated_at"] as? String, state: item["state"] as? String)
                     
                     self.issues.append(issue)
                     
@@ -129,6 +129,23 @@ class IssuesTableViewController: UITableViewController {
             
             // Pass the repoName to the NewIssueTableViewController
             destinationVC.currentRepoName = repoName
+            
+        }
+        
+        if segue.identifier == "showIssueDetailTableViewController" {
+            
+            print("prepareForSegue: showIssueDetailTableViewController.")
+            
+            let destinationVC = segue.destinationViewController as! IssueDetailTableViewController
+            
+            // Pass the issue to the IssueDetailTableViewController for use
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                
+                let issue = self.issues[indexPath.row]
+                    
+                destinationVC.issue = issue
+                
+            }
             
         }
         

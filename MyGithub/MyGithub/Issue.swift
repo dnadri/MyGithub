@@ -14,15 +14,17 @@ class Issue {
     var title: String?
     var body: String?
     var comments: Int?
+    var commentsURL: NSURL?
     var timestamp: String?
     var state: String?
     
-    init(number: Int?, title: String?, body: String?, comments: Int?, timestamp: String?, state: String?) {
+    init(number: Int?, title: String?, body: String?, comments: Int?, commentsURL: NSURL?, timestamp: String?, state: String?) {
         
         self.number = number
         self.title = title
         self.body = body
         self.comments = comments
+        self.commentsURL = commentsURL
         self.timestamp = timestamp
         self.state = state
         
