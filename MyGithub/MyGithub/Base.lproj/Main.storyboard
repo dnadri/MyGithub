@@ -918,29 +918,81 @@
         <!--Edit Issue-->
         <scene sceneID="klr-pC-i7o">
             <objects>
-                <tableViewController id="lKr-ta-cmA" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2C4-Nd-guj">
+                <tableViewController id="lKr-ta-cmA" customClass="EditIssueTableViewController" customModule="MyGithub" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="2C4-Nd-guj">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TZX-WB-myd">
-                                <rect key="frame" x="0.0" y="92" width="768" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TZX-WB-myd" id="PFH-ck-ngg">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Title" id="Xqd-zQ-hEN">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="5s0-do-wlk">
+                                        <rect key="frame" x="0.0" y="114" width="768" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5s0-do-wlk" id="tcb-OT-XaH">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xjs-Sj-GQM">
+                                                    <rect key="frame" x="0.0" y="0.0" width="768" height="79"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Xjs-Sj-GQM" firstAttribute="leading" secondItem="tcb-OT-XaH" secondAttribute="leading" id="8Sm-ni-iPY"/>
+                                                <constraint firstItem="Xjs-Sj-GQM" firstAttribute="top" secondItem="tcb-OT-XaH" secondAttribute="top" id="Hao-gO-ybK"/>
+                                                <constraint firstAttribute="bottom" secondItem="Xjs-Sj-GQM" secondAttribute="bottom" id="WEs-fk-gYG"/>
+                                                <constraint firstAttribute="trailing" secondItem="Xjs-Sj-GQM" secondAttribute="trailing" id="ZcE-hh-ypT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Comment" id="yk9-Cw-qqs">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="120" id="Hlo-Qf-fHg">
+                                        <rect key="frame" x="0.0" y="245" width="768" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hlo-Qf-fHg" id="CcQ-0h-FBY">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="119"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oFu-nR-Etl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="768" height="119"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="25"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="oFu-nR-Etl" secondAttribute="trailing" id="EYd-yj-aKO"/>
+                                                <constraint firstItem="oFu-nR-Etl" firstAttribute="top" secondItem="CcQ-0h-FBY" secondAttribute="top" id="MbM-Id-rOV"/>
+                                                <constraint firstAttribute="bottom" secondItem="oFu-nR-Etl" secondAttribute="bottom" id="Wmk-HS-NKQ"/>
+                                                <constraint firstItem="oFu-nR-Etl" firstAttribute="leading" secondItem="CcQ-0h-FBY" secondAttribute="leading" id="t17-eS-kez"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="lKr-ta-cmA" id="Sx0-Dg-bLv"/>
                             <outlet property="delegate" destination="lKr-ta-cmA" id="cIi-Vs-zAQ"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Edit Issue" id="Wrq-IY-G5N">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="dtZ-ml-u5h"/>
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="11h-B9-GoI"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="dtZ-ml-u5h">
+                            <connections>
+                                <action selector="cancelTapped:" destination="lKr-ta-cmA" id="QUo-ZB-X1t"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="11h-B9-GoI">
+                            <connections>
+                                <action selector="submitTapped:" destination="lKr-ta-cmA" id="PEy-D8-OYU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s2Q-fG-TRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
