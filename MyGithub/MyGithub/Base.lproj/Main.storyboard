@@ -976,6 +976,58 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="kme-40-tyd">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="50" id="0Wg-dU-gcV">
+                                        <rect key="frame" x="0.0" y="401" width="768" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Wg-dU-gcV" id="DIf-Of-Vg1">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Close Issue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dj3-dd-D2l">
+                                                    <rect key="frame" x="0.0" y="0.0" width="768" height="49"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                                    <color key="textColor" red="1" green="0.1647058824" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Dj3-dd-D2l" firstAttribute="top" secondItem="DIf-Of-Vg1" secondAttribute="top" id="baU-d5-jq9"/>
+                                                <constraint firstItem="Dj3-dd-D2l" firstAttribute="leading" secondItem="DIf-Of-Vg1" secondAttribute="leading" id="uNv-cu-tXd"/>
+                                                <constraint firstAttribute="trailing" secondItem="Dj3-dd-D2l" secondAttribute="trailing" id="vSq-TE-Nlw"/>
+                                                <constraint firstAttribute="bottom" secondItem="Dj3-dd-D2l" secondAttribute="bottom" id="xrM-8z-AC1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="OXU-GX-qV8">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="50" id="peN-rr-4gh">
+                                        <rect key="frame" x="0.0" y="487" width="768" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="peN-rr-4gh" id="Bub-an-e0j">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Issue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4Q-51-rxf">
+                                                    <rect key="frame" x="0.0" y="0.0" width="768" height="49"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                                    <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="G4Q-51-rxf" firstAttribute="leading" secondItem="Bub-an-e0j" secondAttribute="leading" id="RJb-9d-pL2"/>
+                                                <constraint firstItem="G4Q-51-rxf" firstAttribute="top" secondItem="Bub-an-e0j" secondAttribute="top" id="afA-J3-3pZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="G4Q-51-rxf" secondAttribute="bottom" id="i4f-0A-mzX"/>
+                                                <constraint firstAttribute="trailing" secondItem="G4Q-51-rxf" secondAttribute="trailing" id="iUj-D4-8Ny"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="lKr-ta-cmA" id="Sx0-Dg-bLv"/>
@@ -994,6 +1046,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="commentTextView" destination="oFu-nR-Etl" id="j4i-7e-x0l"/>
+                        <outlet property="titleTextView" destination="Xjs-Sj-GQM" id="bHU-hD-iuH"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s2Q-fG-TRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
