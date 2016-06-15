@@ -55,7 +55,7 @@ class RepositoriesTableViewController: UITableViewController {
                 print("***json.count: \(json.count)")
 
                 //self.repositories = JSON as! [Repository]
-                for item in json as! NSMutableArray {
+                for item in json as! [AnyObject] {
                     print("item in JSON: \(item)")
                     
 //                    let name = item["name"] as! String
@@ -112,6 +112,9 @@ class RepositoriesTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("RepositoryCell", forIndexPath: indexPath) as! RepositoryTableViewCell
         
+        // Tag the issuesCountLabel to appropriately identify and index
+        // cell.issuesCountLabel.tag = indexPath.row
+        
         if let name = self.repositories[indexPath.row]?.name {
             cell.repositoryNameLabel.text = name
         }
@@ -121,18 +124,46 @@ class RepositoriesTableViewController: UITableViewController {
         }
         
         if let stars = self.repositories[indexPath.row]?.stargazersCount {
-            cell.stargazersCountLabel.text = "\(stars) Stars"
+            
+            if stars == 1 {
+                
+                cell.stargazersCountLabel.text = "\(stars) Star"
+                
+            } else {
+                
+                cell.stargazersCountLabel.text = "\(stars) Stars"
+                
+            }
+            
         }
         
         if let forks = self.repositories[indexPath.row]?.forksCount {
-            cell.forksCountLabel.text = "\(forks) Forks"
+            
+            if forks == 1 {
+                
+                cell.forksCountLabel.text = "\(forks) Fork"
+                
+            } else {
+                
+                cell.forksCountLabel.text = "\(forks) Forks"
+                
+            }
         }
 
         if let issues = self.repositories[indexPath.row]?.issuesCount {
-            cell.issuesCountLabel.text = "\(issues) Issues"
+            
+            if issues == 1 {
+                
+                cell.issuesCountLabel.text = "\(issues) Issue"
+                
+            } else {
+                
+                cell.issuesCountLabel.text = "\(issues) Issues"
+                
+            }
+            
         }
         
-        // "Updated Jun 13, 2016, 6:26PM EDT"
         // i.e.: "Updated 4 days ago"
         if let dateUpdated = self.repositories[indexPath.row]?.timestamp {
             let dateFormatter = NSDateFormatter()
@@ -146,9 +177,32 @@ class RepositoriesTableViewController: UITableViewController {
         
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        
+//        
+//        
+//    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        
+        if segue.identifier == "showIssuesTableViewController" {
+            
+            print("prepareForSegue: showIssuesTableViewController.")
+            
+            let destinationVC = segue.destinationViewController as! IssuesTableViewController
+            
+            // Pass the repository to the IssuesTableViewController for use
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                
+                if let name = self.repositories[indexPath.row]?.name {
+                    
+                    destinationVC.repoName = name
+                    
+                }
+                
+            }
+            
+        }
         
     }
     

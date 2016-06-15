@@ -47,10 +47,12 @@ class ProfileTableViewController: UITableViewController {
         
         profileImageView.layer.cornerRadius = profileImageView.frame.size.height / 2
         profileImageView.layer.masksToBounds = true
-        profileImageView.layer.borderWidth = 4.0
+        profileImageView.layer.borderWidth = 5.0
         profileImageView.layer.borderColor = UIColor.whiteColor().CGColor
         
-        
+        // Self-sizing cells (auto-layout constraints must be set for cell)
+        tableView.estimatedRowHeight = 183
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         //tableView.tableFooterView = UIView(frame: CGRectZero)
         
@@ -68,7 +70,6 @@ class ProfileTableViewController: UITableViewController {
     func getProfileInfo() {
         
         //Alamofire.Manager.sharedInstance.session.configuration.requestCachePolicy = .ReturnCacheDataElseLoad
-        
         Alamofire.request(.GET, "https://api.github.com/users/wework-test").validate(statusCode: 200..<300).responseJSON { response in
             
             //let cachedURLResponse = NSCachedURLResponse(response: response.response!, data: response.data!, userInfo: nil, storagePolicy: .Allowed)
