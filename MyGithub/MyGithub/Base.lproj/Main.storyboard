@@ -330,6 +330,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Repositories" id="4XE-iq-6OY">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="qNf-Pj-LUc"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="QPV-ey-hBg">
+                            <connections>
+                                <action selector="refreshTable:" destination="9Qr-pJ-hIy" id="Uv7-D5-Hvp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="menuBarButton" destination="qNf-Pj-LUc" id="nlf-bP-FRT"/>

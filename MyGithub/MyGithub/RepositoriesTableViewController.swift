@@ -44,6 +44,9 @@ class RepositoriesTableViewController: UITableViewController {
     
     func getRepositories() {
         
+        // Remove all the repositories from the array and keep the capacity
+        repositories.removeAll(keepCapacity: true)
+        
         Alamofire.request(.GET, "https://api.github.com/users/wework-test/repos").validate(statusCode: 200..<300).responseJSON { response in
             print(response.request)  // original URL request
             print(response.response) // URL response
@@ -95,6 +98,12 @@ class RepositoriesTableViewController: UITableViewController {
             
             
         }
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        super.viewDidAppear(true)
         
     }
     
@@ -205,6 +214,11 @@ class RepositoriesTableViewController: UITableViewController {
         }
         
     }
+    
+    @IBAction func refreshTable(sender: AnyObject) {
+        getRepositories()
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
