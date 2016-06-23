@@ -122,21 +122,29 @@ class NewIssueTableViewController: UITableViewController, UITextViewDelegate {
         
         self.submitBarButton.enabled = false
         
-        let params = ["title": self.titleTextView.text, "body": self.commentTextView.text]
+        let headers = [
+            "Authorization": "token 22afe06392daad77c05b13ca98149a9b0d3afdb3",
+            "Accept": "application/vnd.github.v3+json"
+        ]
         
-        Alamofire.request(.POST, "https://api.github.com/repos/wework-test/\(currentRepoName!)/issues", parameters: params, encoding: .JSON)
-            .validate(statusCode: 200..<300).responseJSON { response in
+        let parameters = [
+            "title": self.titleTextView.text,
+            "body":  self.commentTextView.text
+        ]
+        
+        Alamofire.request(.POST, "https://api.github.com/repos/wework-test/\(currentRepoName!)/issues", parameters: parameters, encoding: .JSON, headers: headers).validate(statusCode: 200..<300).responseJSON { response in
                 
                 guard response.result.error ==  nil else {
                     // ERROR
                     print("ERROR: \(response.result.error!)")
+                    
                     return
                 }
                 
                 if let value = response.result.value {
                     // SUCCESS
                     let issue = JSON(value)
-                    print("New Issue: \(issue.description)")
+                    print("SUCCESS: New Issue: \(issue.description)")
                 }
                 
         }
