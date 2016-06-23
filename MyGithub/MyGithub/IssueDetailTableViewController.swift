@@ -33,6 +33,7 @@ class IssueDetailTableViewController: UITableViewController {
         
     }
     
+    // Gets all of the comments from the comments URL that was passed from the IssuesTableViewController (implement if comment prototype cell will be implemented)
     func getIssueComments() {
         
         print("getIssueDetail() called.")
@@ -107,6 +108,9 @@ class IssueDetailTableViewController: UITableViewController {
         } else {
             cell.stateImageView.image = UIImage(named: "opened")
         }
+        
+        // If time permits, create prototype cell for issue comments and return them underneath the IssueDetailCell
+        // ...
         
         return cell
         

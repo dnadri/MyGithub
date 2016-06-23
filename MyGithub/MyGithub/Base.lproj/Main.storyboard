@@ -817,7 +817,7 @@
         <scene sceneID="L1u-Ih-Xhl">
             <objects>
                 <tableViewController id="VeR-A7-VvI" customClass="IssueDetailTableViewController" customModule="MyGithub" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" id="RMX-ey-ntm">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" id="RMX-ey-ntm">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -829,7 +829,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="768" height="109"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Issue Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3B-qH-GQc">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Issue Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3B-qH-GQc">
                                             <rect key="frame" x="58" y="8" width="500" height="28"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -865,18 +865,22 @@
                                         <constraint firstItem="I4O-CQ-i4B" firstAttribute="leading" secondItem="kC7-FN-SE8" secondAttribute="leadingMargin" constant="50" id="2jY-pc-tzu"/>
                                         <constraint firstItem="C3B-qH-GQc" firstAttribute="leading" secondItem="kC7-FN-SE8" secondAttribute="leadingMargin" constant="50" id="3C6-TC-XfO"/>
                                         <constraint firstAttribute="topMargin" secondItem="5JZ-kQ-3rC" secondAttribute="top" id="5Rg-uk-eFe"/>
+                                        <constraint firstItem="C3B-qH-GQc" firstAttribute="leading" secondItem="I4O-CQ-i4B" secondAttribute="leading" id="D0C-cs-rde"/>
                                         <constraint firstAttribute="topMargin" secondItem="C3B-qH-GQc" secondAttribute="top" id="DAj-zp-rVE"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="I4O-CQ-i4B" secondAttribute="bottom" constant="36" id="IYB-yM-rqy"/>
                                         <constraint firstItem="qK7-yF-q7T" firstAttribute="top" secondItem="kC7-FN-SE8" secondAttribute="topMargin" constant="3" id="Ljr-7D-SG7"/>
-                                        <constraint firstItem="qK7-yF-q7T" firstAttribute="leading" secondItem="C3B-qH-GQc" secondAttribute="trailing" constant="125" id="Qbo-7O-8VA"/>
+                                        <constraint firstItem="qK7-yF-q7T" firstAttribute="leading" secondItem="C3B-qH-GQc" secondAttribute="trailing" constant="8" id="Qbo-7O-8VA"/>
                                         <constraint firstItem="AaY-5b-3iD" firstAttribute="top" secondItem="I4O-CQ-i4B" secondAttribute="bottom" constant="11" id="S9C-xh-O2w"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="I4O-CQ-i4B" secondAttribute="trailing" id="TDd-jl-M5D"/>
                                         <constraint firstItem="I4O-CQ-i4B" firstAttribute="top" secondItem="C3B-qH-GQc" secondAttribute="bottom" constant="8" id="YYF-HC-5b2"/>
                                         <constraint firstItem="qK7-yF-q7T" firstAttribute="top" secondItem="kC7-FN-SE8" secondAttribute="topMargin" constant="3" id="cpj-Zw-GW2"/>
+                                        <constraint firstAttribute="topMargin" secondItem="C3B-qH-GQc" secondAttribute="top" id="dG0-Cy-La3"/>
                                         <constraint firstItem="AaY-5b-3iD" firstAttribute="leading" secondItem="kC7-FN-SE8" secondAttribute="leadingMargin" constant="50" id="fhM-6G-Ug6"/>
                                         <constraint firstItem="qK7-yF-q7T" firstAttribute="trailing" secondItem="kC7-FN-SE8" secondAttribute="trailingMargin" id="jj6-pm-cPZ"/>
                                         <constraint firstItem="C3B-qH-GQc" firstAttribute="leading" secondItem="5JZ-kQ-3rC" secondAttribute="trailing" constant="8" id="mKK-4f-U3I"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="I4O-CQ-i4B" secondAttribute="trailing" id="uMK-bf-bE9"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="5JZ-kQ-3rC" secondAttribute="leading" id="vdX-Co-rJy"/>
+                                        <constraint firstItem="qK7-yF-q7T" firstAttribute="top" secondItem="C3B-qH-GQc" secondAttribute="top" constant="3" id="yfT-vD-V1i"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
