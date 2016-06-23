@@ -163,11 +163,11 @@ class RepositoriesTableViewController: UITableViewController {
             
             if issues == 1 {
                 
-                cell.issuesCountLabel.text = "\(issues) Issue"
+                cell.issuesCountLabel.text = "\(issues) Open Issue"
                 
             } else {
                 
-                cell.issuesCountLabel.text = "\(issues) Issues"
+                cell.issuesCountLabel.text = "\(issues) Open Issues"
                 
             }
             
