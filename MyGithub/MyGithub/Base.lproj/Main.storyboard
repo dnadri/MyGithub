@@ -1044,6 +1044,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="commentTextView" destination="oFu-nR-Etl" id="j4i-7e-x0l"/>
+                        <outlet property="submitBarButton" destination="11h-B9-GoI" id="VLT-AM-urn"/>
                         <outlet property="titleTextView" destination="Xjs-Sj-GQM" id="bHU-hD-iuH"/>
                     </connections>
                 </tableViewController>
