@@ -123,7 +123,7 @@ class NewIssueTableViewController: UITableViewController, UITextViewDelegate {
         self.submitBarButton.enabled = false
         
         let headers = [
-            "Authorization": "token 22afe06392daad77c05b13ca98149a9b0d3afdb3",
+            "Authorization": "token adf7d108fae34a2c76d94afcd30bfe4cf961f72f",
             "Accept": "application/vnd.github.v3+json"
         ]
         
