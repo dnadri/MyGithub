@@ -18,7 +18,7 @@ DerivedData/
 xcuserdata/
 
 # Ignore Files
-MyGithub/MyGithub/Constants.swift
+MyGithub/MyGithub/MyGithub/Constants.swift
 
 ## Other
 *.moved-aside
