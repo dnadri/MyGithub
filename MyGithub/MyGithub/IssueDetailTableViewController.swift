@@ -11,6 +11,8 @@ import Alamofire
 
 class IssueDetailTableViewController: UITableViewController {
 
+    var currentRepoName: String!
+    
     var issue: Issue!
     
     override func viewDidLoad() {
@@ -126,7 +128,8 @@ class IssueDetailTableViewController: UITableViewController {
             
             let destinationVC = nav.topViewController as! EditIssueTableViewController
             
-            // Pass the issue to the EditIssueTableViewController to edit the correct issue
+            // Pass the repo name and issue to the EditIssueTableViewController to edit the correct issue
+            destinationVC.repoName = currentRepoName
             destinationVC.issue = issue
             
         }

@@ -152,7 +152,8 @@ class IssuesTableViewController: UITableViewController {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 
                 let issue = self.issues[indexPath.row]
-                    
+                
+                destinationVC.currentRepoName = repoName
                 destinationVC.issue = issue
                 
             }
