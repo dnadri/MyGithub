@@ -11,6 +11,6 @@ import Foundation
 
 class Constants {
     
-    static let token = "token 1"
+    static let token = "token 2"
     
 }
