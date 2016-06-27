@@ -19,10 +19,6 @@ class IssuesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("IssuesTableViewController: viewDidLoad() called.")
-        
-        //getIssues()
-        
         // Self-sizing cells (auto-layout constraints must be set for cell)
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension

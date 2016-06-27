@@ -915,7 +915,7 @@
         <scene sceneID="klr-pC-i7o">
             <objects>
                 <tableViewController id="lKr-ta-cmA" customClass="EditIssueTableViewController" customModule="MyGithub" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="2C4-Nd-guj">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="2C4-Nd-guj">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1018,7 +1018,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="commentTextView" destination="oFu-nR-Etl" id="j4i-7e-x0l"/>
-                        <outlet property="issueStateCell" destination="0Wg-dU-gcV" id="Y0h-PU-0q9"/>
+                        <outlet property="editIssueTableView" destination="2C4-Nd-guj" id="hCL-xy-X8E"/>
                         <outlet property="submitBarButton" destination="11h-B9-GoI" id="VLT-AM-urn"/>
                         <outlet property="titleTextView" destination="Xjs-Sj-GQM" id="bHU-hD-iuH"/>
                     </connections>

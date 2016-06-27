@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class IssueDetailTableViewController: UITableViewController {
 
@@ -32,6 +33,40 @@ class IssueDetailTableViewController: UITableViewController {
         
         // Removes extra cell separators below tableview (of empty/unused cells)
         tableView.tableFooterView = UIView(frame: CGRectZero)
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        
+        refreshData()
+
+    }
+    
+    func refreshData() {
+        print("refreshData()")
+        
+        Alamofire.request(.GET, "https://api.github.com/repos/wework-test/\(currentRepoName)/issues/\(issue.number!)").validate(statusCode: 200..<300).responseJSON { response in
+            
+            guard response.result.error ==  nil else {
+                // ERROR
+                print("ERROR: \(response.result.error!)")
+                let alert = UIAlertController(title: "Error", message: "Whoops! Looks like there was an error while processing your request. Please try again later. (Code: \(response.result.error?.code))", preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                alert.presentViewController(alert, animated: true, completion: nil)
+                
+                return
+            }
+            
+            if let value = response.result.value {
+                // SUCCESS
+                let issue = JSON(value)
+                print("SUCCESS: Edited Issue: \(issue.description)")
+            }
+            
+            self.tableView.reloadData()
+            
+        }
         
     }
     

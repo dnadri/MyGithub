@@ -22,6 +22,7 @@ class EditIssueTableViewController: UITableViewController, UITextViewDelegate {
     
     var closeIssueCell: UITableViewCell = UITableViewCell()
     
+    @IBOutlet var editIssueTableView: UITableView!
     
     @IBOutlet weak var submitBarButton: UIBarButtonItem!
     
@@ -29,7 +30,6 @@ class EditIssueTableViewController: UITableViewController, UITextViewDelegate {
     
     @IBOutlet weak var commentTextView: UITextView!
     
-    @IBOutlet weak var issueStateCell: UITableViewCell!
     
     override func viewDidLoad() {
         
@@ -221,28 +221,38 @@ class EditIssueTableViewController: UITableViewController, UITextViewDelegate {
     func confirmEdit() {
         print("confirmEdit() called.")
         
-        // Create an option menu as an action sheet to confirm user's issue edit
-        let optionMenu = UIAlertController(title: "Are you sure you want to change the state of this issue?", message: nil, preferredStyle: .ActionSheet)
+        let indexPath = NSIndexPath(forRow: 0, inSection: 2)
         
-        // Add actions to the menu
-        let cancelAction = UIAlertAction(title: "No", style: .Cancel, handler: nil)
-        
-        let editAction = UIAlertAction(title: "Yes", style: .Default, handler: { action in
-
-            // open/close issue here
-            if self.isOpen == true {
-                self.closeIssue()
-            } else {
-                self.openIssue()
-            }
+        dispatch_async(dispatch_get_main_queue()) {
             
-            self.dismissViewControllerAnimated(true, completion: nil)
-
-        })
-        
-        optionMenu.addAction(cancelAction)
-        optionMenu.addAction(editAction)
-        presentViewController(optionMenu, animated: true, completion: nil)
+            // Create an option menu as an action sheet to confirm user's issue edit
+            let optionMenu = UIAlertController(title: "Are you sure you want to change the state of this issue?", message: nil, preferredStyle: .ActionSheet)
+            
+            // Needed to work on iPad
+            optionMenu.popoverPresentationController?.sourceView = self.tableView
+            optionMenu.popoverPresentationController?.sourceRect = self.tableView.cellForRowAtIndexPath(indexPath)!.frame
+            
+            // Add actions to the menu
+            let cancelAction = UIAlertAction(title: "No", style: .Cancel, handler: nil)
+            
+            let editAction = UIAlertAction(title: "Yes", style: .Default, handler: { action in
+                
+                // open/close issue here
+                if self.isOpen == true {
+                    self.closeIssue()
+                } else {
+                    self.openIssue()
+                }
+                
+                self.dismissViewControllerAnimated(true, completion: nil)
+                
+            })
+            
+            optionMenu.addAction(cancelAction)
+            optionMenu.addAction(editAction)
+            self.presentViewController(optionMenu, animated: true, completion: nil)
+            
+        }
         
     }
 
