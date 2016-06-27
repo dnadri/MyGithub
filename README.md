@@ -1,5 +1,5 @@
-# MyGithub
-A Github App for iPad built in Swift.
+#MyGithub
+A Github App for iPad I built in Swift as a personal side project.
 
 #Capabilities
 - Users can view their own GitHub profile information
