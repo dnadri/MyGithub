@@ -5,11 +5,8 @@
 //  Created by David Nadri on 6/13/16.
 //  Copyright © 2016 David Nadri. All rights reserved.
 //
-// avatarURL: NSURL, name: String, username: String, followers: Int, starred: Int, following: Int, bio: String
-
 
 import Foundation
-import Alamofire
 
 class Profile {
     

@@ -50,6 +50,12 @@ class ProfileTableViewController: UITableViewController {
         profileImageView.layer.borderWidth = 5.0
         profileImageView.layer.borderColor = UIColor.whiteColor().CGColor
         
+        // User tap on repository # label takes user to Repositories view
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ProfileTableViewController.handleTap(_:)))
+        tapRecognizer.numberOfTapsRequired = 1
+        repositoriesLabel.addGestureRecognizer(tapRecognizer)
+        repositoriesLabel.userInteractionEnabled = true
+        
         // Self-sizing cells (auto-layout constraints must be set for cell)
         tableView.estimatedRowHeight = 183
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -152,6 +158,13 @@ class ProfileTableViewController: UITableViewController {
         if let bio = self.profile?.bio {
             self.bioLabel.text = bio
         }
+        
+    }
+    
+    func handleTap(recognizer: UITapGestureRecognizer) {
+        print("handleTap() tapped.")
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("RepositoriesTableViewController") as! RepositoriesTableViewController
+        self.navigationController?.pushViewController(viewController, animated: true)
         
     }
 

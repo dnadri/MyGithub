@@ -19,10 +19,6 @@ class IssuesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("IssuesTableViewController: viewDidLoad() called.")
-        
-        getIssues()
-        
         // Self-sizing cells (auto-layout constraints must be set for cell)
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -34,9 +30,19 @@ class IssuesTableViewController: UITableViewController {
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        
+        getIssues()
+        
+    }
+    
     func getIssues() {
         
         print("repoName: \(repoName!)")
+        
+        // Remove all the issues from the array and keep the capacity to avoid duplicate results when getIssues() is called again
+        issues.removeAll(keepCapacity: true)
         
         Alamofire.request(.GET, "https://api.github.com/repos/wework-test/\(repoName!)/issues?state=all").validate(statusCode: 200..<300).responseJSON { response in
             print(response.request)  // original URL request
@@ -142,7 +148,8 @@ class IssuesTableViewController: UITableViewController {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 
                 let issue = self.issues[indexPath.row]
-                    
+                
+                destinationVC.currentRepoName = repoName
                 destinationVC.issue = issue
                 
             }

@@ -14,7 +14,9 @@ class IssueDetailTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     
+    @IBOutlet weak var bodyLabel: UILabel!
     
+    @IBOutlet weak var commentLabel: UILabel!
     
     @IBOutlet weak var timestampLabel: UILabel!
     

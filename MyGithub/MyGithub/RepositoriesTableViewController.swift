@@ -20,7 +20,7 @@ class RepositoriesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getRepositories()
+        //getRepositories()
         
         // Self-sizing cells (auto-layout constraints must be set for cell)
         tableView.estimatedRowHeight = 100
@@ -39,6 +39,13 @@ class RepositoriesTableViewController: UITableViewController {
         
         // Uncomment to change the width of the side menu
         //self.revealViewController().rearViewRevealWidth = 62
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        
+        getRepositories()
         
     }
     
@@ -163,11 +170,11 @@ class RepositoriesTableViewController: UITableViewController {
             
             if issues == 1 {
                 
-                cell.issuesCountLabel.text = "\(issues) Issue"
+                cell.issuesCountLabel.text = "\(issues) Open Issue"
                 
             } else {
                 
-                cell.issuesCountLabel.text = "\(issues) Issues"
+                cell.issuesCountLabel.text = "\(issues) Open Issues"
                 
             }
             
@@ -185,12 +192,6 @@ class RepositoriesTableViewController: UITableViewController {
         return cell
         
     }
-    
-//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        
-//        
-//        
-//    }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
