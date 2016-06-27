@@ -29,6 +29,7 @@
 		715366E71D114F220090F8B2 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715366E61D114F220090F8B2 /* AboutTableViewController.swift */; };
 		715366E91D1158530090F8B2 /* EditIssueTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715366E81D1158530090F8B2 /* EditIssueTableViewController.swift */; };
 		715FC70A1D0FC7260089F5F0 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715FC7091D0FC7260089F5F0 /* Issue.swift */; };
+		71B2A0DA1D217D1F00971943 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B2A0D91D217D1F00971943 /* Constants.swift */; };
 		71B393A31D1C15EB0033827A /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 71B3937B1D1C15EB0033827A /* Contents.json */; };
 		71B393A41D1C15EB0033827A /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B3937C1D1C15EB0033827A /* Icon-40.png */; };
 		71B393A51D1C15EB0033827A /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B3937D1D1C15EB0033827A /* Icon-40@2x.png */; };
@@ -117,6 +118,7 @@
 		715366E61D114F220090F8B2 /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		715366E81D1158530090F8B2 /* EditIssueTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditIssueTableViewController.swift; sourceTree = "<group>"; };
 		715FC7091D0FC7260089F5F0 /* Issue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
+		71B2A0D91D217D1F00971943 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		71B3937B1D1C15EB0033827A /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		71B3937C1D1C15EB0033827A /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
 		71B3937D1D1C15EB0033827A /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				7107A86F1D09D8A300DD3690 /* LaunchScreen.storyboard */,
 				7107A86D1D09D8A300DD3690 /* Assets.xcassets */,
 				715366DE1D10BFD40090F8B2 /* TimestampHelper.swift */,
+				71B2A0D91D217D1F00971943 /* Constants.swift */,
 				71F77ADB1D0A00FB0076472F /* MyGithub-Bridging-Header.h */,
 				7107A8721D09D8A300DD3690 /* Info.plist */,
 			);
@@ -618,6 +621,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7107A8691D09D8A200DD3690 /* ProfileTableViewController.swift in Sources */,
+				71B2A0DA1D217D1F00971943 /* Constants.swift in Sources */,
 				715FC70A1D0FC7260089F5F0 /* Issue.swift in Sources */,
 				715366E91D1158530090F8B2 /* EditIssueTableViewController.swift in Sources */,
 				71154DA51D0F50E900C38FF1 /* Profile.swift in Sources */,
