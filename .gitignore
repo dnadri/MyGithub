@@ -17,9 +17,6 @@ DerivedData/
 !default.perspectivev3
 xcuserdata/
 
-# Ignore Files
-MyGithub/MyGithub/MyGithub/Constants.swift
-
 ## Other
 *.moved-aside
 *.xcuserstate
