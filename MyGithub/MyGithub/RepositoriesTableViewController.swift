@@ -54,7 +54,7 @@ class RepositoriesTableViewController: UITableViewController {
         // Remove all the repositories from the array and keep the capacity
         repositories.removeAll(keepCapacity: true)
         
-        Alamofire.request(.GET, "https://api.github.com/users/wework-test/repos").validate(statusCode: 200..<300).responseJSON { response in
+        Alamofire.request(.GET, "https://api.github.com/users/dnadri/repos").validate(statusCode: 200..<300).responseJSON { response in
             print(response.request)  // original URL request
             print(response.response) // URL response
             print(response.data)     // server data

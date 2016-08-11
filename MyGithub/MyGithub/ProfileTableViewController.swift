@@ -76,7 +76,7 @@ class ProfileTableViewController: UITableViewController {
     func getProfileInfo() {
         
         //Alamofire.Manager.sharedInstance.session.configuration.requestCachePolicy = .ReturnCacheDataElseLoad
-        Alamofire.request(.GET, "https://api.github.com/users/wework-test").validate(statusCode: 200..<300).responseJSON { response in
+        Alamofire.request(.GET, "https://api.github.com/users/dnadri").validate(statusCode: 200..<300).responseJSON { response in
             
             //let cachedURLResponse = NSCachedURLResponse(response: response.response!, data: response.data!, userInfo: nil, storagePolicy: .Allowed)
             //NSURLCache.sharedURLCache().storeCachedResponse(cachedURLResponse, forRequest: response.request!)

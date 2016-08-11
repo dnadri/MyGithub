@@ -132,7 +132,7 @@ class NewIssueTableViewController: UITableViewController, UITextViewDelegate {
             "body":  self.commentTextView.text
         ]
         
-        Alamofire.request(.POST, "https://api.github.com/repos/wework-test/\(currentRepoName!)/issues", parameters: parameters, encoding: .JSON, headers: headers).validate(statusCode: 200..<300).responseJSON { response in
+        Alamofire.request(.POST, "https://api.github.com/repos/dnadri/\(currentRepoName!)/issues", parameters: parameters, encoding: .JSON, headers: headers).validate(statusCode: 200..<300).responseJSON { response in
                 
                 guard response.result.error ==  nil else {
                     // ERROR

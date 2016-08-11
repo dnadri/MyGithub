@@ -46,7 +46,7 @@ class IssueDetailTableViewController: UITableViewController {
     func refreshData() {
         print("refreshData()")
         
-        Alamofire.request(.GET, "https://api.github.com/repos/wework-test/\(currentRepoName)/issues/\(issue.number!)").validate(statusCode: 200..<300).responseJSON { response in
+        Alamofire.request(.GET, "https://api.github.com/repos/dnadri/\(currentRepoName)/issues/\(issue.number!)").validate(statusCode: 200..<300).responseJSON { response in
             
             guard response.result.error ==  nil else {
                 // ERROR

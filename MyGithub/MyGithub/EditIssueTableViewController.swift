@@ -123,7 +123,7 @@ class EditIssueTableViewController: UITableViewController, UITextViewDelegate {
             "body":  self.commentTextView.text
         ]
         
-        Alamofire.request(.PATCH, "https://api.github.com/repos/wework-test/\(repoName)/issues/\(issue.number!)", parameters: parameters, encoding: .JSON, headers: headers).validate(statusCode: 200..<300).responseJSON { response in
+        Alamofire.request(.PATCH, "https://api.github.com/repos/dnadri/\(repoName)/issues/\(issue.number!)", parameters: parameters, encoding: .JSON, headers: headers).validate(statusCode: 200..<300).responseJSON { response in
             
             guard response.result.error ==  nil else {
                 // ERROR
@@ -161,7 +161,7 @@ class EditIssueTableViewController: UITableViewController, UITextViewDelegate {
         // In this car, state will be updated to "closed"
         let parameters = ["state": "closed"]
         
-        Alamofire.request(.PATCH, "https://api.github.com/repos/wework-test/\(repoName)/issues/\(issue.number!)", parameters: parameters, encoding: .JSON, headers: headers).validate(statusCode: 200..<300).responseJSON { response in
+        Alamofire.request(.PATCH, "https://api.github.com/repos/dnadri/\(repoName)/issues/\(issue.number!)", parameters: parameters, encoding: .JSON, headers: headers).validate(statusCode: 200..<300).responseJSON { response in
             
             guard response.result.error ==  nil else {
                 // ERROR
@@ -196,7 +196,7 @@ class EditIssueTableViewController: UITableViewController, UITextViewDelegate {
         // In this car, state will be updated to "open"
         let parameters = ["state": "open"]
         
-        Alamofire.request(.PATCH, "https://api.github.com/repos/wework-test/\(repoName)/issues/\(issue.number!)", parameters: parameters, encoding: .JSON, headers: headers).validate(statusCode: 200..<300).responseJSON { response in
+        Alamofire.request(.PATCH, "https://api.github.com/repos/dnadri/\(repoName)/issues/\(issue.number!)", parameters: parameters, encoding: .JSON, headers: headers).validate(statusCode: 200..<300).responseJSON { response in
             
             guard response.result.error ==  nil else {
                 // ERROR

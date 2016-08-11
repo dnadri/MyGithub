@@ -44,7 +44,7 @@ class IssuesTableViewController: UITableViewController {
         // Remove all the issues from the array and keep the capacity to avoid duplicate results when getIssues() is called again
         issues.removeAll(keepCapacity: true)
         
-        Alamofire.request(.GET, "https://api.github.com/repos/wework-test/\(repoName!)/issues?state=all").validate(statusCode: 200..<300).responseJSON { response in
+        Alamofire.request(.GET, "https://api.github.com/repos/dnadri/\(repoName!)/issues?state=all").validate(statusCode: 200..<300).responseJSON { response in
             print(response.request)  // original URL request
             print(response.response) // URL response
             print(response.data)     // server data
